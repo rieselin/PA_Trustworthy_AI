@@ -1,0 +1,56 @@
+\documentclass[a4paper, 11pt,abstract=on]{scrreprt}
+
+\input{preamble.tex}
+
+\title{Title}
+\author{Vorname Nachname}
+\date{\today}
+
+\begin{document}
+
+\includepdf{resources/titlepage} % TODO: replace this when all info is definitive
+
+% Titelseite nicht als erste Seite zählen
+\clearpage
+\setcounter{page}{1}
+
+\selectlanguage{ngerman} 
+\begin{abstract}
+\input{parts/01_zusammenfassung}
+\end{abstract}
+\selectlanguage{english} 
+\begin{abstract}
+\input{parts/02_abstract}
+\end{abstract}
+
+\chapter*{Foreword}
+\input{parts/03_foreword}
+
+\tableofcontents
+
+\chapter{Introduction}
+\input{parts/04_introduction}
+
+\chapter{Theoretical Background}
+\input{parts/05_theoretical_background}
+
+\chapter{Methods and Implementation}
+\input{parts/06_methods_and_implementation}
+
+\chapter{Results}
+\input{parts/07_results}
+
+\chapter{Discussion and Outlook}
+\input{parts/08_discussion_and_outlook}
+
+%\chapter{Outlook}
+%\input{parts/ausblick}
+
+\chapter{References}
+\input{parts/09_references}
+
+\appendix
+\chapter{Appendix}
+\label{ch:anhang}
+\input{parts/10_appendix}
+\end{document}
