@@ -1,6 +1,360 @@
 
-@online{noauthor_coco_nodate,
-	title = {{COCO} - Common Objects in Context},
+@article{chen_explainable_nodate,
+	title = {Explainable {Saliency}: {Articulating} {Reasoning} with {Contextual} {Prioritization}},
+	abstract = {Deep saliency models, which predict what parts of an image capture our attention, are often like black boxes. This limits their use, especially in areas where understanding why a model makes a decision is crucial. Our research tackles this challenge by developing an explainable saliency (XSal) model that not only identiﬁes what is important in an image, but also explains its choices in a way that makes sense to humans. We achieve this by using vision-language models to reason about images and by focusing the model’s attention on the most crucial information using a contextual prioritization mechanism. Unlike prior approaches that rely on ﬁxation descriptions or soft-attention based semantic aggregation, our method directly models the reasoning steps involved in saliency prediction, generating selectively prioritized explanations clarify why speciﬁc regions are prioritized. Comprehensive evaluations demonstrate the effectiveness of our model in generating high-quality saliency maps and coherent, contextually relevant explanations. This research is a step towards more transparent and trustworthy AI systems that can help us understand and navigate the world around us.},
+	language = {en},
+	author = {Chen, Nuo and Jiang, Ming and Zhao, Qi},
+}
+
+@inproceedings{feldhus_saliency_2023,
+	address = {Toronto, Canada},
+	title = {Saliency {Map} {Verbalization}: {Comparing} {Feature} {Importance} {Representations} from {Model}-free and {Instruction}-based {Methods}},
+	shorttitle = {Saliency {Map} {Verbalization}},
+	url = {https://aclanthology.org/2023.nlrse-1.4},
+	doi = {10.18653/v1/2023.nlrse-1.4},
+	language = {en},
+	urldate = {2025-10-04},
+	booktitle = {Proceedings of the 1st {Workshop} on {Natural} {Language} {Reasoning} and {Structured} {Explanations} ({NLRSE})},
+	publisher = {Association for Computational Linguistics},
+	author = {Feldhus, Nils and Hennig, Leonhard and Nasert, Maximilian and Ebert, Christopher and Schwarzenberg, Robert and Mller, Sebastian},
+	year = {2023},
+	pages = {30--46},
+}
+
+@misc{wu_usable_2025,
+	title = {Usable {XAI}: 10 {Strategies} {Towards} {Exploiting} {Explainability} in the {LLM} {Era}},
+	shorttitle = {Usable {XAI}},
+	url = {http://arxiv.org/abs/2403.08946},
+	doi = {10.48550/arXiv.2403.08946},
+	abstract = {Explainable AI (XAI) refers to techniques that provide human-understandable insights into the workings of AI models. Recently, the focus of XAI is being extended toward explaining Large Language Models (LLMs). This extension calls for a significant transformation in the XAI methodologies for two reasons. First, many existing XAI methods cannot be directly applied to LLMs due to their complexity and advanced capabilities. Second, as LLMs are increasingly deployed in diverse applications, the role of XAI shifts from merely opening the ``black box'' to actively enhancing the productivity and applicability of LLMs in real-world settings. Meanwhile, the conversation and generation abilities of LLMs can reciprocally enhance XAI. Therefore, in this paper, we introduce Usable XAI in the context of LLMs by analyzing (1) how XAI can explain and improve LLM-based AI systems and (2) how XAI techniques can be improved by using LLMs. We introduce 10 strategies, introducing the key techniques for each and discussing their associated challenges. We also provide case studies to demonstrate how to obtain and leverage explanations. The code used in this paper can be found at: https://github.com/JacksonWuxs/UsableXAI\_LLM.},
+	urldate = {2025-10-04},
+	publisher = {arXiv},
+	author = {Wu, Xuansheng and Zhao, Haiyan and Zhu, Yaochen and Shi, Yucheng and Yang, Fan and Hu, Lijie and Liu, Tianming and Zhai, Xiaoming and Yao, Wenlin and Li, Jundong and Du, Mengnan and Liu, Ninghao},
+	month = may,
+	year = {2025},
+	note = {arXiv:2403.08946 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Computers and Society, Computer Science - Machine Learning},
+}
+
+@article{minh_explainable_2022,
+	title = {Explainable artificial intelligence: a comprehensive review},
+	volume = {55},
+	issn = {1573-7462},
+	shorttitle = {Explainable artificial intelligence},
+	url = {https://doi.org/10.1007/s10462-021-10088-y},
+	doi = {10.1007/s10462-021-10088-y},
+	abstract = {Thanks to the exponential growth in computing power and vast amounts of data, artificial intelligence (AI) has witnessed remarkable developments in recent years, enabling it to be ubiquitously adopted in our daily lives. Even though AI-powered systems have brought competitive advantages, the black-box nature makes them lack transparency and prevents them from explaining their decisions. This issue has motivated the introduction of explainable artificial intelligence (XAI), which promotes AI algorithms that can show their internal process and explain how they made decisions. The number of XAI research has increased significantly in recent years, but there lacks a unified and comprehensive review of the latest XAI progress. This review aims to bridge the gap by discovering the critical perspectives of the rapidly growing body of research associated with XAI. After offering the readers a solid XAI background, we analyze and review various XAI methods, which are grouped into (i) pre-modeling explainability, (ii) interpretable model, and (iii) post-modeling explainability. We also pay attention to the current methods that dedicate to interpret and analyze deep learning methods. In addition, we systematically discuss various XAI challenges, such as the trade-off between the performance and the explainability, evaluation methods, security, and policy. Finally, we show the standard approaches that are leveraged to deal with the mentioned challenges.},
+	language = {en},
+	number = {5},
+	urldate = {2025-10-04},
+	journal = {Artificial Intelligence Review},
+	author = {Minh, Dang and Wang, H. Xiang and Li, Y. Fen and Nguyen, Tan N.},
+	month = jun,
+	year = {2022},
+	keywords = {Black-box models, Deep learning, Explainable artificial intelligence, Interpretability, Machine learning},
+	pages = {3503--3568},
+}
+
+@misc{natarajan_vale_2024,
+	title = {{VALE}: {A} {Multimodal} {Visual} and {Language} {Explanation} {Framework} for {Image} {Classifiers} using {eXplainable} {AI} and {Language} {Models}},
+	shorttitle = {{VALE}},
+	url = {http://arxiv.org/abs/2408.12808},
+	doi = {10.48550/arXiv.2408.12808},
+	abstract = {Deep Neural Networks (DNNs) have revolutionized various fields by enabling task automation and reducing human error. However, their internal workings and decision-making processes remain obscure due to their black box nature. Consequently, the lack of interpretability limits the application of these models in high-risk scenarios. To address this issue, the emerging field of eXplainable Artificial Intelligence (XAI) aims to explain and interpret the inner workings of DNNs. Despite advancements, XAI faces challenges such as the semantic gap between machine and human understanding, the trade-off between interpretability and performance, and the need for context-specific explanations. To overcome these limitations, we propose a novel multimodal framework named VALE Visual and Language Explanation. VALE integrates explainable AI techniques with advanced language models to provide comprehensive explanations. This framework utilizes visual explanations from XAI tools, an advanced zero-shot image segmentation model, and a visual language model to generate corresponding textual explanations. By combining visual and textual explanations, VALE bridges the semantic gap between machine outputs and human interpretation, delivering results that are more comprehensible to users. In this paper, we conduct a pilot study of the VALE framework for image classification tasks. Specifically, Shapley Additive Explanations (SHAP) are used to identify the most influential regions in classified images. The object of interest is then extracted using the Segment Anything Model (SAM), and explanations are generated using state-of-the-art pre-trained Vision-Language Models (VLMs). Extensive experimental studies are performed on two datasets: the ImageNet dataset and a custom underwater SONAR image dataset, demonstrating VALEs real-world applicability in underwater image classification.},
+	urldate = {2025-10-04},
+	publisher = {arXiv},
+	author = {Natarajan, Purushothaman and Nambiar, Athira},
+	month = aug,
+	year = {2024},
+	note = {arXiv:2408.12808 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+}
+
+@article{sahatova_overview_2022,
+	title = {An {Overview} and {Comparison} of {XAI} {Methods} for {Object} {Detection} in {Computer} {Tomography}},
+	volume = {212},
+	issn = {18770509},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1877050922016969},
+	doi = {10.1016/j.procs.2022.11.005},
+	abstract = {Modern hardware and software developments in the medical field generate massive amounts of data that clinicians need to analyze. Many solutions based on deep learning have been introduced to support the diagnostic process. Nonetheless, the transparency and reasoning of such systems are important for medical practices that limit the application of artificial intelligence techniques that work in 'black box' scenarios. The purpose of this paper is to present algorithms that allow interpretation of the complex structure of models used in object detection. Based on the ablation study results, a detailed analysis of the advantages and disadvantages of the chosen methods has been provided. Infidelity and consistency metrics were used to assess the algorithms of explanation.},
+	language = {en},
+	urldate = {2025-10-04},
+	journal = {Procedia Computer Science},
+	author = {Sahatova, Kseniya and Balabaeva, Ksenia},
+	year = {2022},
+	pages = {209--219},
+}
+
+@article{akula_natural_nodate,
+	title = {Natural {Language} {Interaction} with {Explainable} {AI} {Models}},
+	abstract = {This paper presents an explainable AI (XAI) system that provides explanations for its predictions. The system consists of two key components – namely, the prediction And-Or graph (AOG) model for recognizing and localizing concepts of interest in input data, and the XAI model for providing explanations to the user about the AOG’s predictions. In this work, we focus on the XAI model speciﬁed to interact with the user in natural language, whereas the AOG’s predictions are considered given and represented by the corresponding parse graphs (pg’s) of the AOG. Our XAI model takes pg’s as input and provides answers to the user’s questions using the following types of reasoning: direct evidence (e.g., detection scores), part-based inference (e.g., detected parts provide evidence for the concept asked), and other evidences from spatiotemporal context (e.g., constraints from the spatiotemporal surround). We identify several correlations between user’s questions and the XAI answers using Youtube Action dataset.},
+	language = {en},
+	author = {Akula, Arjun R and Todorovic, Sinisa and Chai, Joyce Y and Zhu, Song-Chun},
+}
+
+@article{tjoa_survey_2021,
+	title = {A {Survey} on {Explainable} {Artificial} {Intelligence} ({XAI}): {Toward} {Medical} {XAI}},
+	volume = {32},
+	issn = {2162-2388},
+	shorttitle = {A {Survey} on {Explainable} {Artificial} {Intelligence} ({XAI})},
+	url = {https://ieeexplore.ieee.org/document/9233366/},
+	doi = {10.1109/TNNLS.2020.3027314},
+	abstract = {Recently, artificial intelligence and machine learning in general have demonstrated remarkable performances in many tasks, from image processing to natural language processing, especially with the advent of deep learning (DL). Along with research progress, they have encroached upon many different fields and disciplines. Some of them require high level of accountability and thus transparency, for example, the medical sector. Explanations for machine decisions and predictions are thus needed to justify their reliability. This requires greater interpretability, which often means we need to understand the mechanism underlying the algorithms. Unfortunately, the blackbox nature of the DL is still unresolved, and many machine decisions are still poorly understood. We provide a review on interpretabilities suggested by different research works and categorize them. The different categories show different dimensions in interpretability research, from approaches that provide “obviously” interpretable information to the studies of complex patterns. By applying the same categorization to interpretability in medical research, it is hoped that: 1) clinicians and practitioners can subsequently approach these methods with caution; 2) insight into interpretability will be born with more considerations for medical practices; and 3) initiatives to push forward data-based, mathematically grounded, and technically grounded medical education are encouraged.},
+	number = {11},
+	urldate = {2025-10-04},
+	journal = {IEEE Transactions on Neural Networks and Learning Systems},
+	author = {Tjoa, Erico and Guan, Cuntai},
+	month = nov,
+	year = {2021},
+	keywords = {Artificial intelligence, Explainable artificial intelligence (XAI), Machine learning, Machine learning algorithms, Medical information systems, interpretability, machine learning (ML), medical information system, survey},
+	pages = {4793--4813},
+}
+
+@article{afroogh_trust_2024,
+	title = {Trust in {AI}: progress, challenges, and future directions},
+	volume = {11},
+	issn = {2662-9992},
+	shorttitle = {Trust in {AI}},
+	url = {https://www.nature.com/articles/s41599-024-04044-8},
+	doi = {10.1057/s41599-024-04044-8},
+	abstract = {We conducted an inclusive and systematic review of academic papers, reports, case studies, and trust frameworks in AI, written in English. Given that there is not a speciﬁc database on trust in AI in particular, we used the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) framework to develop a protocol in this review (Fig. 1). In order to conduct a comprehensive review of the relevant studies, we followed two approaches. First, we manually searched for the most related papers on trust in AI: 19 papers were identiﬁed through the online search after the removal of duplicate ﬁles. Secondly, we fulﬁlled a keyword-based search (using the http://scholar.google.com search engine) to collect all relevant papers on the topic. This search was accomplished using the following keyword phrases: (1) “trust + AI” which provided 19 relevant result pages of Google Scholar, (2) “trust + Artiﬁcial + Intelligence” for which the ﬁrst ﬁve result pages were reviewed, (3) “trustworthy + AI,” for which the ﬁrst 15 result pages were reviewed; and (4) “trustworthy + Artiﬁcial + Intelligence,” for which the ﬁrst 13 result pages of Google Scholar were reviewed.},
+	language = {en},
+	number = {1},
+	urldate = {2025-10-03},
+	journal = {Humanities and Social Sciences Communications},
+	author = {Afroogh, Saleh and Akbari, Ali and Malone, Emmie and Kargar, Mohammadali and Alambeigi, Hananeh},
+	month = nov,
+	year = {2024},
+	pages = {1568},
+}
+
+@article{moradi_model-agnostic_2024,
+	title = {Model-agnostic explainable artificial intelligence for object detection in image data},
+	volume = {137},
+	issn = {09521976},
+	url = {http://arxiv.org/abs/2303.17249},
+	doi = {10.1016/j.engappai.2024.109183},
+	abstract = {In recent years, deep neural networks have been widely used for building high-performance Artificial Intelligence (AI) systems for computer vision applications. Object detection is a fundamental task in computer vision, which has been greatly progressed through developing large and intricate AI models. However, the lack of transparency is a big challenge that may not allow the widespread adoption of these models. Explainable artificial intelligence is a field of research where methods are developed to help users understand the behavior, decision logics, and vulnerabilities of AI systems. Previously, few explanation methods were developed for object detection based on random masking. However, random masks may raise some issues regarding the actual importance of pixels within an image. In this paper, we design and implement a black-box explanation method named Black-box Object Detection Explanation by Masking (BODEM) through adopting a hierarchical random masking approach for object detection systems. We propose a hierarchical random masking framework in which coarse-grained masks are used in lower levels to find salient regions within an image, and fine-grained mask are used to refine the salient regions in higher levels. Experimentations on various object detection datasets and models showed that BODEM can effectively explain the behavior of object detectors. Moreover, our method outperformed Detector Randomized Input Sampling for Explanation (D-RISE) and Local Interpretable Model-agnostic Explanations (LIME) with respect to different quantitative measures of explanation effectiveness. The experimental results demonstrate that BODEM can be an effective method for explaining and validating object detection systems in black-box testing scenarios.},
+	urldate = {2025-10-03},
+	journal = {Engineering Applications of Artificial Intelligence},
+	author = {Moradi, Milad and Yan, Ke and Colwell, David and Samwald, Matthias and Asgari, Rhona},
+	month = nov,
+	year = {2024},
+	note = {arXiv:2303.17249 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition},
+	pages = {109183},
+}
+
+@article{sahatova_overview_2022-1,
+	title = {An {Overview} and {Comparison} of {XAI} {Methods} for {Object} {Detection} in {Computer} {Tomography}},
+	volume = {212},
+	issn = {18770509},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1877050922016969},
+	doi = {10.1016/j.procs.2022.11.005},
+	abstract = {Modern hardware and software developments in the medical field generate massive amounts of data that clinicians need to analyze. Many solutions based on deep learning have been introduced to support the diagnostic process. Nonetheless, the transparency and reasoning of such systems are important for medical practices that limit the application of artificial intelligence techniques that work in 'black box' scenarios. The purpose of this paper is to present algorithms that allow interpretation of the complex structure of models used in object detection. Based on the ablation study results, a detailed analysis of the advantages and disadvantages of the chosen methods has been provided. Infidelity and consistency metrics were used to assess the algorithms of explanation.},
+	language = {en},
+	urldate = {2025-10-03},
+	journal = {Procedia Computer Science},
+	author = {Sahatova, Kseniya and Balabaeva, Ksenia},
+	year = {2022},
+	pages = {209--219},
+}
+
+@misc{cambria_xai_2024,
+	title = {{XAI} meets {LLMs}: {A} {Survey} of the {Relation} between {Explainable} {AI} and {Large} {Language} {Models}},
+	shorttitle = {{XAI} meets {LLMs}},
+	url = {http://arxiv.org/abs/2407.15248},
+	doi = {10.48550/arXiv.2407.15248},
+	abstract = {In this survey, we address the key challenges in Large Language Models (LLM) research, focusing on the importance of interpretability. Driven by increasing interest from AI and business sectors, we highlight the need for transparency in LLMs. We examine the dual paths in current LLM research and eXplainable Artificial Intelligence (XAI): enhancing performance through XAI and the emerging focus on model interpretability. Our paper advocates for a balanced approach that values interpretability equally with functional advancements. Recognizing the rapid development in LLM research, our survey includes both peer-reviewed and preprint (arXiv) papers, offering a comprehensive overview of XAI's role in LLM research. We conclude by urging the research community to advance both LLM and XAI fields together.},
+	urldate = {2025-09-30},
+	publisher = {arXiv},
+	author = {Cambria, Erik and Malandri, Lorenzo and Mercorio, Fabio and Nobani, Navid and Seveso, Andrea},
+	month = jul,
+	year = {2024},
+	note = {arXiv:2407.15248 [cs]},
+	keywords = {Computer Science - Computation and Language},
+}
+
+@article{ozenc_evaluation_nodate,
+	title = {An {Evaluation} of {XAI} {Methods} for {Object} {Detection} in {Satellite} {Images} using {YOLOv5}},
+	url = {https://avesis.kocaeli.edu.tr/yayin/04959bc0-60f9-4096-a2e8-da039a2c5065/an-evaluation-of-xai-methods-for-object-detection-in-satellite-images-using-yolov5},
+	abstract = {In recent years, deep learning based approaches
+have gained widespread adoption in Earth observation and remote sensing,
+mirroring their success in numerous other domains. However, unlike approaches
+based on physical models, deep learning methods operate as black boxes,
+concealing internal processes influencing final decisions. This lack of
+transparency poses a challenge, particularly in applications where
+interpretability is paramount, as outputs generated by these approaches cannot
+be fully trusted or verified. Explainable Artificial Intelligence (XAI) aims to
+make the deep learning processes and their outputs more interpretable for
+researchers and end users. The purpose of this study is to investigate and
+evaluate the performance of various XAI methodologies for post-hoc
+explainability of object detection in satellite images using deep learning. Class-activation
+mapping (CAM) based XAI methods, namely GradCAM, GradCAM++, EigenCAM, ScoreCAM,
+and LayerCAM, are used for post-hoc explainability, following target detection
+by You Look Only Once (YOLO) algorithm. Experimental results show that each
+method provides considerably different saliency maps, which may be used for qualitative
+performance analysis of the interpretability provided by these methods. However,
+in a large dataset, a qualitative analysis by itself may be subjective and
+misleading. As such, an evaluation framework tailored for remote sensing
+applications is adopted to evaluate the interpretability performances of these
+XAI methods quantitatively. The findings provide an important step towards
+understanding the role and effectiveness of these XAI methods for
+interpretability of object detection for remote sensing.},
+	language = {en},
+	urldate = {2025-09-30},
+	author = {Özenç, Uğur and Ertürk, A. L. P.},
+}
+
+@article{liu_human_nodate,
+	title = {Human {Attention}-{Guided} {Explainable} {AI} for {Object} {Detection}},
+	abstract = {Although object detection AI plays an important role in many critical systems, corresponding Explainable AI (XAI) methods remain very limited. Here we first developed FullGrad-CAM and FullGrad-CAM++ by extending traditional gradient-based methods to generate object-specific explanations with higher plausibility. Since human attention may reflect features more interpretable to humans, we explored the possibility to use it as guidance to learn how to combine the explanatory information in the detector model to best present as an XAI saliency map that is interpretable (plausible) to humans. Interestingly, we found that human attention maps had higher faithfulness for explaining the detector model than existing saliency-based XAI methods. By using trainable activation functions and smoothing kernels to maximize the XAI saliency map similarity to human attention maps, the generated map had higher faithfulness and plausibility than both existing XAI methods and human attention maps. The learned functions were modelspecific, well generalizable to other databases.},
+	language = {en},
+	author = {Liu, Guoyang and Zhang, Jindi and Chan, Antoni B and Hsiao, Janet H},
+}
+
+@misc{nguyen_odexai_2025,
+	title = {{ODExAI}: {A} {Comprehensive} {Object} {Detection} {Explainable} {AI} {Evaluation}},
+	shorttitle = {{ODExAI}},
+	url = {http://arxiv.org/abs/2504.19249},
+	doi = {10.48550/arXiv.2504.19249},
+	abstract = {Explainable Artificial Intelligence (XAI) techniques for interpreting object detection models remain in an early stage, with no established standards for systematic evaluation. This absence of consensus hinders both the comparative analysis of methods and the informed selection of suitable approaches. To address this gap, we introduce the Object Detection Explainable AI Evaluation (ODExAI), a comprehensive framework designed to assess XAI methods in object detection based on three core dimensions: localization accuracy, faithfulness to model behavior, and computational complexity. We benchmark a set of XAI methods across two widely used object detectors (YOLOX and Faster R-CNN) and standard datasets (MS-COCO and PASCAL VOC). Empirical results demonstrate that region-based methods (e.g., D-CLOSE) achieve strong localization (PG = 88.49\%) and high model faithfulness (OA = 0.863), though with substantial computational overhead (Time = 71.42s). On the other hand, CAM-based methods (e.g., G-CAME) achieve superior localization (PG = 96.13\%) and significantly lower runtime (Time = 0.54s), but at the expense of reduced faithfulness (OA = 0.549). These findings demonstrate critical trade-offs among existing XAI approaches and reinforce the need for task-specific evaluation when deploying them in object detection pipelines. Our implementation and evaluation benchmarks are publicly available at: https://github.com/Analytics-Everywhere-Lab/odexai.},
+	urldate = {2025-09-30},
+	publisher = {arXiv},
+	author = {Nguyen, Loc Phuc Truong and Nguyen, Hung Truong Thanh and Cao, Hung},
+	month = apr,
+	year = {2025},
+	note = {arXiv:2504.19249 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+}
+
+@article{mankodiya_od-xai_2022,
+	title = {{OD}-{XAI}: {Explainable} {AI}-{Based} {Semantic} {Object} {Detection} for {Autonomous} {Vehicles}},
+	volume = {12},
+	copyright = {http://creativecommons.org/licenses/by/3.0/},
+	issn = {2076-3417},
+	shorttitle = {{OD}-{XAI}},
+	url = {https://www.mdpi.com/2076-3417/12/11/5310},
+	doi = {10.3390/app12115310},
+	abstract = {In recent years, artificial intelligence (AI) has become one of the most prominent fields in autonomous vehicles (AVs). With the help of AI, the stress levels of drivers have been reduced, as most of the work is executed by the AV itself. With the increasing complexity of models, explainable artificial intelligence (XAI) techniques work as handy tools that allow naive people and developers to understand the intricate workings of deep learning models. These techniques can be paralleled to AI to increase their interpretability. One essential task of AVs is to be able to follow the road. This paper attempts to justify how AVs can detect and segment the road on which they are moving using deep learning (DL) models. We trained and compared three semantic segmentation architectures for the task of pixel-wise road detection. Max IoU scores of 0.9459 and 0.9621 were obtained on the train and test set. Such DL algorithms are called “black box models” as they are hard to interpret due to their highly complex structures. Integrating XAI enables us to interpret and comprehend the predictions of these abstract models. We applied various XAI methods and generated explanations for the proposed segmentation model for road detection in AVs.},
+	language = {en},
+	number = {11},
+	urldate = {2025-09-30},
+	journal = {Applied Sciences},
+	author = {Mankodiya, Harsh and Jadav, Dhairya and Gupta, Rajesh and Tanwar, Sudeep and Hong, Wei-Chiang and Sharma, Ravi},
+	month = jan,
+	year = {2022},
+	note = {Publisher: Multidisciplinary Digital Publishing Institute},
+	keywords = {DL, KITTI dataset, ResNet, SegNet, autonomous vehicles, black box, explainable AI, object detection, semantic segmentation},
+	pages = {5310},
+}
+
+@article{singhal_explainable_2024,
+	title = {Explainable {Artificial} {Intelligence} ({XAI}) {Model} for {Cancer} {Image} {Classification}},
+	volume = {141},
+	issn = {1526-1506},
+	url = {https://www.techscience.com/CMES/v141n1/57687},
+	doi = {10.32604/cmes.2024.051363},
+	abstract = {The use of Explainable Artificial Intelligence (XAI) models becomes increasingly important for making decisions in smart healthcare environments. It is to make sure that decisions are based on trustworthy algorithms and that healthcare workers understand the decisions made by these algorithms. These models can potentially enhance interpretability and explainability in decision-making processes that rely on artificial intelligence. Nevertheless, the intricate nature of the healthcare field necessitates the utilization of sophisticated models to classify cancer images. This research presents an advanced investigation of XAI models to classify cancer images. It describes the different levels of explainability and interpretability associated with XAI models and the challenges faced in deploying them in healthcare applications. In addition, this study proposes a novel framework for cancer image classification that incorporates XAI models with deep learning and advanced medical imaging techniques. The proposed model integrates several techniques, including end-to-end explainable evaluation, rule-based explanation, and useradaptive explanation. The proposed XAI reaches 97.72\% accuracy, 90.72\% precision, 93.72\% recall, 96.72\% F1score, 9.55\% FDR, 9.66\% FOR, and 91.18\% DOR. It will discuss the potential applications of the proposed XAI models in the smart healthcare environment. It will help ensure trust and accountability in AI-based decisions, which is essential for achieving a safe and reliable smart healthcare environment.},
+	language = {en},
+	number = {1},
+	urldate = {2025-09-30},
+	journal = {Computer Modeling in Engineering \& Sciences},
+	author = {Singhal, Amit and Agrawal, Krishna Kant and Quezada, Angeles and Aguiñaga, Adrian Rodriguez and Jiménez, Samantha and Yadav, Satya Prakash},
+	year = {2024},
+	pages = {401--441},
+}
+
+@misc{song_ml_2025,
+	title = {{ML} {Model} {Explainability}: {SHAP} vs. {LIME}},
+	shorttitle = {{ML} {Model} {Explainability}},
+	url = {https://mljourney.com/ml-model-explainability-shap-vs-lime/},
+	abstract = {Discover the key differences between SHAP and LIME for ML model explainability. Compare features, use cases, and implementation...},
+	language = {en-US},
+	urldate = {2025-09-30},
+	journal = {ML Journey},
+	author = {Song, Peter},
+	month = jun,
+	year = {2025},
+}
+
+@misc{noauthor_llama-modelsmodelsllama3_2_nodate,
+	title = {llama-models/models/llama3\_2 at main · meta-llama/llama-models},
+	url = {https://github.com/meta-llama/llama-models/tree/main/models/llama3_2},
+	abstract = {Utilities intended for use with Llama models. Contribute to meta-llama/llama-models development by creating an account on GitHub.},
+	language = {en},
+	urldate = {2025-09-17},
+	journal = {GitHub},
+}
+
+@misc{noauthor_meta-llamallama-32-11b-vision_2024,
+	title = {meta-llama/{Llama}-3.2-{11B}-{Vision} · {Hugging} {Face}},
+	url = {https://huggingface.co/meta-llama/Llama-3.2-11B-Vision},
+	abstract = {We’re on a journey to advance and democratize artificial intelligence through open source and open science.},
+	urldate = {2025-09-17},
+	month = dec,
+	year = {2024},
+}
+
+@misc{noauthor_what_nodate,
+	title = {What are {Vision}-{Language} {Models}?},
+	url = {https://www.nvidia.com/en-us/glossary/vision-language-models/},
+	abstract = {Check NVIDIA Glossary for more details.},
+	language = {en-us},
+	urldate = {2025-09-17},
+	journal = {NVIDIA},
+}
+
+@misc{noauthor_was_2025,
+	title = {Was sind {Vision} {Language} {Models} ({VLMs})? {\textbar} {IBM}},
+	shorttitle = {Was sind {Vision} {Language} {Models} ({VLMs})?},
+	url = {https://www.ibm.com/de-de/think/topics/vision-language-models},
+	abstract = {Vision Language Models (VLMs) sind Modelle der künstlichen Intelligenz (KI), die Funktionen der Computer Vision und der Verarbeitung natürlicher Sprache (NLP) miteinander verbinden.},
+	language = {de},
+	urldate = {2025-09-17},
+	month = feb,
+	year = {2025},
+}
+
+@misc{noauthor_guide_nodate,
+	title = {A {Guide} to {Object} {Detection} with {Vision}-{Language} {Models} {\textbar} {DigitalOcean}},
+	url = {https://www.digitalocean.com/community/conceptual-articles/hands-on-guide-to-object-detection-with-vision-language-models},
+	abstract = {Explore how Vision-Language Models are transforming object detection with practical techniques, real-world use cases, and hands-on implementation tips.},
+	language = {en},
+	urldate = {2025-09-17},
+}
+
+@misc{noauthor_pa_trustworthy_ai_nodate,
+	title = {{PA}\_Trustworthy\_AI},
+	url = {https://de.overleaf.com/project/68c3d006685a3f5c391dd0ce},
+	abstract = {Ein einfach bedienbarer Online-LaTeX-Editor. Keine Installation notwendig, Zusammenarbeit in Echtzeit, Versionskontrolle, Hunderte von LaTeX-Vorlagen und mehr},
+	language = {de},
+	urldate = {2025-09-16},
+}
+
+@misc{noauthor_vision_nodate,
+	title = {Vision {Language} {Models} {Explained}},
+	url = {https://huggingface.co/blog/vlms},
+	abstract = {We’re on a journey to advance and democratize artificial intelligence through open source and open science.},
+	urldate = {2025-09-14},
+}
+
+@misc{noauthor_open_nodate,
+	title = {Open {Object} {Detection} {Leaderboard} - a {Hugging} {Face} {Space} by hf-vision},
+	url = {https://huggingface.co/spaces/hf-vision/object_detection_leaderboard},
+	abstract = {Request evaluation for a new model on the COCO validation 2017 dataset. Enter the model name to submit your request; you'll get a confirmation message if the request is accepted.},
+	urldate = {2025-09-14},
+}
+
+@misc{noauthor_object_nodate,
+	title = {Object {Detection} {Leaderboard}},
+	url = {https://huggingface.co/blog/object-detection-leaderboard},
+	abstract = {We’re on a journey to advance and democratize artificial intelligence through open source and open science.},
+	urldate = {2025-09-14},
+}
+
+@misc{noauthor_coco_nodate,
+	title = {{COCO} - {Common} {Objects} in {Context}},
 	url = {https://cocodataset.org/#home},
 	urldate = {2025-09-12},
 }

@@ -6,4 +6,27 @@
 % !TEX TS-program = pdflatexmk
 % !TEX encoding = UTF-8 Unicode
 % !TEX root = ../doc.tex
-\lipsum[1]
+
+\section{Plan Methodik:}
+
+
+e.g. heatmap shows which pixels activated the neurons the most
+but how did these activations result in the decision that this is a dog?
+
+
+called: saliency verbalization \cite{feldhus_saliency_2023}, \cite{chen_explainable_nodate}
+
+\begin{enumerate}
+    \item Explain YOLO output with LIME/SHAP
+    \item Explain that output with LLAMA
+    \item Analyze how different groups of people interpret that in regards to trust
+\end{enumerate}
+
+
+\subsection{Limitations / Problems}
+Limits: It’s still post-hoc interpretation: the VLM is interpreting the attribution artifact, not actually reading the internals of the target model. The VLM can hallucinate plausible reasons (=> structured inputs, verification steps, faithfulness tests)
+
+
+Use SHAP cause is less human - interpretable
+https://colab.research.google.com/drive/10ZgpTntUMOaru4BQ3sf6MeBxcNe75CCl?usp=sharing#scrollTo=zNVyRHIBqXTC
+https://www.steadforce.com/how-tos/explainable-object-detection

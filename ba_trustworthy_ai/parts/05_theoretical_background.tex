@@ -6,4 +6,108 @@
 % !TEX TS-program = pdflatexmk
 % !TEX encoding = UTF-8 Unicode
 % !TEX root = ../doc.tex
-\lipsum[1]
+object detection: 
+trad. object detection: transform images into feature maps => predict bounding boxes => classify
+
+one stage: do this all at once (yolo => one look)
+two stage: generate region proposals => refine \& classify (more exact but slower)
+
+vlm process text and image at the same time
+
+
+visual language models
+architecture: 
+- vision encoder (based on NN or vision trnasformers)
+- language encoder (transforms text into semantical embeddings)
+- fusion mechanism
+advantage vs classical object detection
+- classes for classification do not need to be specified (if it can be described with language)
+- supervised training on object detection not necessary
+
+Explanatory Detection: The need for interpretability grows in importance within environments that require safety. VLMs can accompany their detections with natural language explanations: “Detected a person because the region contains facial features and matches the prompt ‘person walking.’”
+
+Temporal Reasoning: Advanced VLMs that process video can track objects over time, understand actions, and provide scene-level descriptions (e.g., “a person picks up a bag and exits the frame”), enabling activity recognition and behavior analysis.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{vlArchitecture.png}
+    \caption{VLM Architecture \cite{noauthor_what_nodate}}
+    \label{fig:placeholder}
+\end{figure}
+
+
+VLMs also have difficulty providing precise locations for objects.
+Long video understanding is a challenge due to the need to take into account visual information across potential hours of video to properly analyze or answer questions.
+
+
+\begin{enumerate}
+    \item Image Input: The vision encoder processes an image to produce a grid of feature vectors(one for each patch or region).
+    \item Text Input: The language encoder processes a textual prompt, yielding a semantic embedding.
+    \item Fusion: The vision and language modalities are fused through embedding concatenation, cross-attention layers, or integrating tokens at the transformer input.
+    \item Output: The model generates predictions for object locations as bounding boxes and/or object classes.
+\end{enumerate}
+
+
+descriptions to use but not as cite-able mat: 
+- \cite{noauthor_vision_nodate}
+- \cite{noauthor_was_2025}
+- \cite{noauthor_what_nodate}
+- \cite{noauthor_guide_nodate}
+
+
+used model: \cite{noauthor_llama-modelsmodelsllama3_2_nodate} \& 
+
+
+hugging face description:  Llama 3.2-Vision is built on top of Llama 3.1 text-only model, which is an auto-regressive language model that uses an optimized transformer architecture. The tuned versions use supervised fine-tuning (SFT) and reinforcement learning with human feedback (RLHF) to align with human preferences for helpfulness and safety. To support image recognition tasks, the Llama 3.2-Vision model uses a separately trained vision adapter that integrates with the pre-trained Llama 3.1 language model. The adapter consists of a series of cross-attention layers that feed image encoder representations into the core LLM.\cite{noauthor_meta-llamallama-32-11b-vision_2024}
+
+
+\subsection{describe kinds of interpretability models (pre-modelling / post}
+=> object detection is black box post modwlling
+
+
+\subsection{Types of Interpretability }
+\cite{tjoa_survey_2021}, \cite{sahatova_overview_2022}
+\subsubsection{Visual and Textual Explanations}
+Aka: Why should I Trust you
+LIME (Local Interpretable Model Explanations) => explains the output of other model
+In image processing, saliency maps, heat maps and superpixels 
+Layer-wise Relevance propagation (LRP) to construct heat-maps
+Automatic Concept-based Explanations (ACE) (superpixels)
+Class Activation MAP (CAM) => saliency map
+Feature Map / Signal Methods: Show stimulation of neuron layers 
+\\
+Logical Statements:
+E.g. Trunk, grey, tusk => elephant
+Decision sets / Rule sets
+\subsubsection{Model Based (Internal Mechanistic Explanations)}
+Figure out variables and how they influence the result 
+split it into vectors that have different informative value => based on neuron activation \\
+math based: check underlying function and improve on it
+
+\subsection{Visual and Textual Explanations for YOLO and LLama-VL}
+desicion for that method because of highest understanding \& higher re- usability in different models
+
+
+yolo: several options e.g. with lime \& shap
+
+llama? what exists? => e.g. \cite{wu_usable_2025}
+lead back to training data, same logical statements, math stuff, same as above but for tokens instead of pixels
+
+check bias and learned lying in post modelling 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{industrystandardGrouping.png}
+    \caption{Industry Standard Grouping todo : remove}
+\end{figure}
+
+
+\subsection{Citations used}
+
+
+
+1. EigenCAM, Gradient SHAP / Layer Gradient SHAP, Layer Activation, occlusion (heat map), LIME \cite{sahatova_overview_2022}, ODExAI \cite{nguyen_odexai_2025}, BODEM \cite{moradi_model-agnostic_2024}
+
+4. trust in ai overview \cite{afroogh_trust_2024}
