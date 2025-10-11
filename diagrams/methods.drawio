@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0" version="28.2.5">
+  <diagram name="Page-1" id="lw3JVmUV44Q9LAuyysoA">
+    <mxGraphModel dx="1693" dy="911" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-1" target="2pdngOK2jxAeXGJXSNFa-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-1" target="2pdngOK2jxAeXGJXSNFa-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-1" value="Set up Repo DRise/Dmfpp to work locally" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-2" target="2pdngOK2jxAeXGJXSNFa-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-2" value="Look at test output &amp;amp; analyze for intepretability" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-4" target="2pdngOK2jxAeXGJXSNFa-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-4" target="2pdngOK2jxAeXGJXSNFa-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-4" value="Run for Different Datasets" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-5" target="2pdngOK2jxAeXGJXSNFa-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-5" value="Find Datasets and make it work with Explainability method" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-6" target="2pdngOK2jxAeXGJXSNFa-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-6" value="Choose Explainability method" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="30" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-7" value="add explanation of reaoning to theory" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="510" y="30" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-8" value="add theory of method to theory" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="510" y="115" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-9" value="add explanation for which data sets" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="470" y="310" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-11" target="2pdngOK2jxAeXGJXSNFa-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-11" target="2pdngOK2jxAeXGJXSNFa-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-11" value="make test output work with llama" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="315" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-12" value="add explanation for results" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="470" y="515" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-14" target="2pdngOK2jxAeXGJXSNFa-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-14" target="2pdngOK2jxAeXGJXSNFa-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-14" value="Look at output &amp;amp; analyze for intepretability" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-15" value="add analysation for results" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="470" y="615" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-16" target="2pdngOK2jxAeXGJXSNFa-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-16" value="Look at output &amp;amp; analyze for intepretability" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-17" target="2pdngOK2jxAeXGJXSNFa-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-17" value="anaylze different people groups reaction to interpreatbility&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-18" value="compare output of drise &amp;amp; additional llama" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="490" y="855" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2pdngOK2jxAeXGJXSNFa-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.143;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2pdngOK2jxAeXGJXSNFa-6" target="2pdngOK2jxAeXGJXSNFa-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
