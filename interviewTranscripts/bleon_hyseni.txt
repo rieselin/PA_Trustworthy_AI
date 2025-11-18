@@ -1,0 +1,93 @@
+Linda Riesen:
+Ja, genau. Okay, jetzt ist es, glaube ich, auch am Aufnehmen… ja. Nike, siehst du, dass du es am Aufnehmen hast? Ah ja, jetzt, okay.
+Also genau, ich habe mich mit verschiedenen explainable Modellen beschäftigt. Das sagt jetzt grundsätzlich darum: Was machen wir mit dem Blackbox-Modell, da wir da nicht wirklich herausfinden können, wie es zum Resultat gekommen ist. Was verstehtst du unter dem Begriff "explainable"?
+
+Bleon Hyseni:
+Ja, also einfach, dass man nachvollziehen kann, was die Modelle genau denken und wie sie darauf hingekommen sind.
+
+Linda Riesen:
+Ja, genau. Und so, jetzt im Interview würde ich dir verschiedene explainable Methoden zeigen und dich dann immer wieder fragen: Wie ist jetzt dein Vertrauen in das Modell? Ist es schlechter, besser oder etwa gleich wie vorher? Das wäre so das Ziel.
+Okay, also ich habe mich fokussiert auf object detection, das heisst, das Modell versucht Bilder anzuschauen und dann verschiedene Objekte darin zu sehen und markiert sie mit einer roten Box. Das ist sehr im Gebrauch bei selbstfahrenden Fahrzeugen zum Beispiel, da man ja zuerst das Objekt erkennen muss, bevor man es bestimmen kann.
+Genau. Jetzt als Startfrage: Wie gross ist dein Vertrauen in ein Objektkennungsmodell? Und vielleicht als Anhaltspunkt: Würdest du dich von einem selbstfahrenden Auto rumchauffieren lassen?
+
+Bleon Hyseni:
+Aber ich verstehe die Frage nicht ganz. Also das Beispiel zeigt die Erkennung von einem Auto, das markiert wird mit einem roten Viereck.
+
+Linda Riesen:
+Genau. Jetzt frage ich dich einfach als Grundlage, als Baseline: Würdest du dich generell von einem selbstfahrenden Auto rumchauffieren lassen? Also wie ist dein Vertrauen in ein AI-Modell generell?
+
+Bleon Hyseni:
+Beim Autofahren: mittel.
+Ich bin dort etwas kritisch, weil kein Mensch eingreifen kann.
+
+Linda Riesen:
+Okay. Jawohl. Gibt es etwas, das dich überzeugen würde, bei einem autonomen Fahrzeug mitzufahren? Wenn zum Beispiel das Modell dir immer zeigt, warum es sich entscheidet, links zu fahren, oder so?
+
+Bleon Hyseni:
+Wenn ich nachvollziehbare Sicherheits-Scores hätte. Also wie sicher sich das Modell fühlt – einfach nachvollziehbar.
+
+Linda Riesen:
+Mhm, okay. Dann kommen wir gleich zum ersten zusätzlichen Resultat. Hier habe ich jeweils die Confidence des Modells ausgegeben, also ob es richtig ein Auto erkannt hat. Wie kommt das bei dir an? Vertraust du ihm jetzt mehr oder weniger?
+
+Bleon Hyseni:
+Weniger, weil die 51% gleich über der Schwelle sind, das wäre ein negativer Eindruck für mich.
+
+Linda Riesen:
+Okay. Dann gibt es auch die Möglichkeit, mit einem Visual Language Model das Ganze noch zu erklären. Hier habe ich die Erklärung, die das Modell ausgegeben hat: “The model predicted the bounding box and the vehicle is in the middle of the image.”
+Hilft dir das weiter?
+
+Bleon Hyseni:
+In Verbindung mit der Confidence ist das für mich gleich. Es ist einfach eine Analyse im Nachhinein. Aber in einem Taxi wäre das ja realtime. Das wäre mein Eindruck.
+
+Linda Riesen:
+Okay. Dann kommen wir zu einer anderen Methode: der Saliency Map. Diese wird generiert, indem man das Bild immer wieder ans Modell schickt und einzelne Pixel schwärzt. Wo die Antwort gleich bleibt, ist es blau; wo sie stark anders ist, rot. Die roten Bereiche tragen also viel zum Resultat bei, die blauen nicht. Was denkst du dazu? Hilft dir das zu verstehen, wie das Modell auf die Bounding Box gekommen ist?
+
+Bleon Hyseni:
+Ja, das finde ich zeigt es besser. Es zeigt mir, dass es akkurater ist, wenn es wiederholt das richtige Resultat hat.
+
+Linda Riesen:
+Dann hier eine Kombination: die Saliency Map und eine Erklärung von LLaMA. Das Modell sagt, dass die roten Bereiche positiv beigetragen haben, und erklärt zum Beispiel, dass es eine gerade Linie ist oder dass das Auto nicht verdeckt ist.
+Wie findest du diese Kombination?
+
+Bleon Hyseni:
+Du hast mir vorher schon die Saliency Map erklärt und ungefähr auch das, was in der LLaMA-Explanation steht. Aber wenn ich nur das Bild hätte ohne deine Erklärung, dann hätte die LLaMA-Explanation es besser gemacht.
+
+Linda Riesen:
+Okay, super. Jetzt kommen wir zu verschiedenen Beispielen: gut, mittel und schlecht.
+Erstes Beispiel: Ein Fussgänger in der Mitte. Das Modell hat den Fussgänger nicht gefunden. Die Saliency Map zeigt, dass es sich auf den Boden und die Füsse konzentriert hat, aber sonst auf nichts. Und LLaMA gibt eher vage Erklärungen. Hilft dir das zu verstehen, warum das Modell den Fussgänger nicht erkannt hat?
+
+Bleon Hyseni:
+Ja, es hilft mir, aber ich bin nicht sicher, ob das LLaMA-Modell akkurate Aussagen getroffen hat. Es ist nicht objektiv. Bei einem Forscher könnte man testen: “Wenn A passiert, dann B.” Hier steht einfach: “Limited context, poor quality”, etc. Das ist so allgemein. Es funktioniert nicht.
+
+Linda Riesen:
+Okay, jawohl.
+
+Bleon Hyseni:
+Vielleicht deswegen – aber es ist nichts Objektives.
+
+Linda Riesen:
+Dann ein zweites Beispiel: Die Bounding Box ist viel zu gross. Auch die Saliency Map fokussiert auf die falschen Bereiche. LLaMA ist halb hilfreich. Was denkst du?
+
+Bleon Hyseni:
+Wie vorher: Es hilft zu verstehen, wo die Fehlerquellen sind. LLaMA ist teilweise gut, aber relativ unakkurat. Es klingt schlau, und manches stimmt, aber vieles ist vage.
+
+Linda Riesen:
+Finde ich auch. Dann das schlechte Beispiel: Die Prediction ist nicht komplett falsch, aber die Saliency Map ist überall, und LLaMA halluziniert. Die Bounding Box ist auch schlecht. Hilfreich?
+
+Bleon Hyseni:
+Es ist ein schlechtes Beispiel: falsche Aussagen, falsche Saliency, unbrauchbar.
+
+Linda Riesen:
+Genau. Abschlussfrage: Was denkst du generell über die Methoden? Würde es dir helfen, wenn ein selbstfahrendes Auto dir live zeigen könnte, worauf es sich fokussiert und welche Objekte es erkennt?
+
+Bleon Hyseni:
+Ja, das würde mir helfen. Saliency Maps oder anderes Visuelles finde ich wertvoller als Textausgaben. Texte können schnell missverständlich sein. Visuell ist klar, was das Auto sieht. Das kann in verschiedenen Formen gezeigt werden – wie bei Tesla oder mit einer Kamera mit Markierungen. Ich finde es wichtig, dass man es nachvollziehen kann.
+
+Linda Riesen:
+Definitiv. Auch im Sinn von späterem Verbessern. Wenn man sieht, dass es sich falsch fokussiert hat, kann man besser neu trainieren.
+
+Bleon Hyseni:
+Genau. Man könnte zum Beispiel auch das Bild runter- oder hochskalieren und testen.
+
+Linda Riesen:
+Ja, genau.

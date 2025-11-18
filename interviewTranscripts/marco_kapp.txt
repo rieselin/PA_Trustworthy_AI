@@ -1,0 +1,73 @@
+Riesen Linda:
+Also jetzt, wir beginnen hier mit der Baseline. Das Modell hat alle Autos erkannt und hat sie mit einem roten Rahmen gekennzeichnet. Das heisst es hat die anderen Autos auch erkannt, aber dieses Auto war das interessanteste für später die Resultate. Darum haben ich dieses Auto ausgesucht. Jetzt generell, um deine Baseline festzustellen, würdest du dich generell von einem selbstfahrenden Auto rumfahren lassen?
+
+Kapp Marco:
+Die selbstfahrenden Fahrzeuge sind ja schon, sofern ich weiss, in Amerika in gebrauch, und so weit ich weiss auch ziemlich erfolgreich. Es es gibt glaub ich schon noch Probleme und Pannen, aber insgesamt hab ich das Gefühl sie sind ziemlich erfolgreich, Würde ich mich schon rumfahren lassen vom selbstfahrenden Auto? Ich müsste, bevor ich es machen, würde ich mich noch informieren. Über die Firma, die dahinter steht. Und ja, was für Experimente und was für Trainings, die schon gemacht haben was für Erfolg und Misserfolge Sie hatten, bevor ich dann wirklich einsteigen würde.
+
+Riesen Linda:
+Sehr fair. OK, also jetzt gehen wir mal davon aus, dass dieses Modell das selbstfahrende Auto fährt. Die Objekterkennung ist natürlich eines der Dinge, die sie machen müssen: zuerst Objekte erkennen, dann labeln und dann daraus die Entscheidung treffen, wie das Auto herum fährt. Jetzt werde ich ihr immer weitere Erklärungen oder weitere Infos aufdecken und dich dann immer fragen, würdest du dich immer noch rumfahren lassen oder nicht mehr? OK, so als erstes: hier hat das Modell die Box mit 50% Sicherheit erkannt und als Auto gelabelt. 
+
+Kapp Marco:
+Was was gibt es noch für andere Objekte, die erkannt werden oder werden nur Autos erkannt? Jetzt mit dem Algorithmus?
+
+Riesen Linda:
+Es wird auch alles, was du auf der Strasse siehst, also Autos, Fussgänger, Fahrzeuge etc erkannt.
+
+Kapp Marco:
+also wenn nur 50% finde ich das noch ziemlich wenig, dann würd ich eigentlich schon erwarten, dass es irgendwo bei mindestens 70% sein sollte, weil mit 70% bist du genug weit weg von von irgendwelchen anderen erkenntnissen also, dass es irgendwas anderes sein könnte. Ich weiss aber nicht ob es gleichzeitig auch noch versucht irgendwas anderes rauszufinden also es ist eben kein Auto ist und wie nahe, dass die anderen Schlüsse wären?
+
+Riesen Linda:
+Genau, dann haben wir hier noch eine natürlich sprachliche Erklärung. Diese versucht auch die Sicherheit des Modells irgendwie festzulegen und sagt hier aus: die bounding Box und ein Vehikel ist in the middle of the Image. Was denkst du generell dazu? Hilft dir das weiter?
+
+Kapp Marco:
+Ja, also hier weiss ich jetzt nicht wie Anhanden von, von welchen Informationen diese dieser Ersatz rausgekommen ist, aber an sich ist das ja ne korrekte Information, wieviel man damit Informationen anfangen kann, ist dann ne andere Frage. Ich glaube, je nach Situation können solche Informationen schon hilfreich sein, vor allem wenn es irgendwie ums Einparken geht, oder? Wenn es darum geht über viel begangene Kreuzungen zu fahren und da dann zu entscheiden, fahr ich jetzt weiter oder trenn sich oder muss ich irgendeinem Hindernis kurzfristig ausweichen? Also von daher, das könnte schon hilfreich sein ja.
+
+Riesen Linda:
+Die sprachliche Erklärung wurde auch besonders von Laien-personen oft bevorzugt gegenüber auch diesem confidence Wert, da es halt ja eine sprachliche Ausgabe ist.
+
+Kapp Marco:
+Mhm also wenn das Miteinander zusammenhängt, dann ist das natürlich hilfreich, auch noch herauszufinden, was für Informationen hinter dem Modell liegen oder wie dann Gewicht entschieden wird. Von daher kann das schon sehr dankbar sein, ja.
+
+Riesen Linda:
+Definitiv. OK, dann schauen wir noch ein weiteres dazu, und zwar hier dieses – ich sage jetzt bewusst nichts dazu, hilft ja das Bild so allein irgendwie weiter?
+
+Kapp Marco:
+Würde mir das weiterhelfen in dem Sinne, dass ich sehe was ist relevant in dem Bild und was ist eher nicht relevant? Ja, würde es mir schon weiterhelfen.
+
+Riesen Linda:
+OK, dann schalten wir noch eine sprachliche Erklärung dazu? [Vorlesen des LLM outputs]
+
+Kapp Marco:
+Ja, damit wir nicht wieder nicht mehr so so so happy, muss ich sagen, weil das das Auto befindet, sie nicht sich ja nicht in der Mitte der Strasse momentan, sondern eigentlich ist es geparkt auf der Seite.
+
+Riesen Linda:
+Genau. Auch wieder im Wunsch, eine Erklärung zu haben, die nicht nur auf einem Bild basiert. Verschiedene Beispiele, bei denen hat es unterschiedlich gut funktioniert, und wir haben immer eine Saliency Map, eine ursprüngliche Produktion und eine Erklärung.
+
+Riesen Linda:
+Hier haben wir eine Prediction, die den Fussgängern nicht erkannt hat. Hier sehen wir die Saliency Map. Das Modell hat sich auf die Füsse des Fussgängers konzentriert und scheinbar nicht auf den Rest. Dann sehen wir hier in der Erklärung die [Vorlesen des LLM outputs]. Ich finde hier auch noch interessant: er hat gleich vorgeschlagen, woran das liegen könnte – Limited contextual information of the image and the poor quality of the image. Was denkst du dazu?
+
+Kapp Marco:
+Man kann ein bisschen herleiten, wieso es jetzt nicht sauber erkannt wurde und was man vielleicht ändern könnte, damit es besser erkannt wird. Von daher find ich den Teil sehr, sehr spannend.
+Gleichzeitig finde ich aber auch die Map interessant, weil daraus kann man auch ein bisschen herleiten was wurde spezifisch erkannt oder was wurde eben nicht erkannt. 
+Und ja woran sollte man vielleicht arbeiten, dass jetzt bei der Person vielleicht nicht nur auf den Boden und die Füsse konzentrieren, sondern ja halt OK gut die Person hat Beine und oben könnte ein Körper sein, der ebenfalls wichtige Informationen liefern könnte. Dazu, dass es ne Person ist.
+
+Riesen Linda:
+Genau. Dann gehen wir zum nächsten Beispiel. Hier wurde das Fahrzeug richtig erkannt. Allerdings ist die vorgeschlagene Bounding Box sehr gross, eher zu gross, wenn er anschaut, scheint auch irgendwie alles was ausserhalb des Autos zu liegt mehr dazu beigetragen haben also das Auto selbst. [Vorlesen des LLM outputs]
+Aber hier, so der Vorschlag von wegen, dass es die Transition Area ist, die die Box bestimmt hat.
+
+Kapp Marco:
+Ja also der obere Teil der macht definitiv Sinn, ich hätte das [die Saliency Map] jetzt auch so interpretiert dass der Blinker und vielleicht das Dach des Fahrzeugs interessant war für die Entscheidung.Der Rest ja ist dann die Frage, ob das dann wirklich relevant ist für eine Entscheidungsfindung.
+
+Riesen Linda:
+Voll. Dann kommen wir hier noch zu einem schlechten Beispiel. Die Bounding Box viel zu gross, die Saliency Map ist überhaupt nicht hilfreich, da sich das Modell scheinbar auf alles Mögliche ausser das Auto konzentriert hat. Und hier die sprachliche Erklärung hatte teilweise völlig halluziniert.
+
+Kapp Marco: Ja, schlecht.
+
+Riesen Linda:
+Okay, jetzt kommen wir so zu den Fragen: So allgemein, würde es dir helfen, wenn du in einem Auto selbst vor einem Auto sitzen würdest und du einen Teil oder alle diese Erklärungen zusätzlich erhältst, also diese mitverfolgen können?
+
+Kapp Marco:
+Das wären viel zu viele Informationen und ich könnte mich nicht wirklich konzentrieren. Sobald man eigentlich ne Information hat und versucht, die zu überdenken und zu analysieren, ist es eigentlich schon zu spät und dann kommt schon wieder neue Informationen. Ich denke, wo es hilfreich sein könnte, ist wenn man einen Tag lang gefahren ist mit dem Fahrzeug und dann irgendwie so einen Summary haben möchte, mit Statistiken wie akkurat waren die Predictions und das die die nicht so gut waren im Modell angezeigt werden können und daran könnte man das Modell dann weiterentwickeln, glaube ich.
+
+Riesen Linda:
+Sehr gut. Damit ist der auch schon wieder fertig.

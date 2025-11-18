@@ -1,0 +1,113 @@
+Linda Riesen: Also ich hab jetzt hier die Resultate meines Explainable AI Models zusammengestellt und das Ziel vom Interview ist herauszufinden, ob das jetzt hilft, ob das das Vertrauen besser macht oder schlechter macht oder gleich bleibt oder wie auch immer. Und jetzt werde ich dich eigentlich immer Fragen stellen so im Sinn von „Wie steht das jetzt mit dem Vertrauen?“
+
+Also und dann: Ich zeig dir einen neuen Teil von der Erklärung oder von dem Output und dann nachher frag ich dich noch mal, wie steht es jetzt mit dem Vertrauen?
+
+Linda Riesen: Also jetzt so als Startfrage: Wie steht es generell mit dem Vertrauen in künstliche Intelligenz?
+
+Anka Riesen: Allgemein oder Bilderkennung?
+
+Linda Riesen: Allgemein. Wenn du AI etwas generierst, wie fest vertraust du dem?
+
+Anka Riesen: Auf einer Skala von 1-10 so ca. eine 7
+
+Linda Riesen: OK. Und würdest du dich von einem selbstfahrenden Fahrzeug rumchauffieren lassen?
+
+Anka Riesen: Ja.
+
+Linda Riesen: Ja OK. Genau, ich habe hier auf dem Bild das Modell, das ich laufen gelassen habe. Hier sieht man eine Szene, die von einem Fahrzeug aufgenommen wurde. Mein Modell wurde darauf trainiert, Objekte zu erkennen und diese dann mit so einem Rahmen darzustellen. Also jetzt hier sieht man, es hat ein Auto erkannt, das ein Hindernis sein wird und hat es eingerahmt.
+
+Dass es so die Baseline jetzt, wenn du das als Output erhältst, würdest du hier immer noch von dem Auto rumchauffieren lassen?
+
+Anka Riesen: OK. Ja.
+
+Linda Riesen: Ja OK, das Modell zeigt jeweils immer die Confidence und noch ein Label, also was es erkannt hat. Wenn man jetzt hier sieht, dass das OK ist in dem Rahmen, den wir gezeichnet haben…
+
+Linda Riesen: Jetzt wieder die Frage: Vertraust du ihm noch oder vertraust du ihm nicht mehr?
+
+Anka Riesen: OK, das ist nicht so viel. Hm, ja, nein.
+
+Linda Riesen: OK, dann gehen wir mal weiter. Wir gehen jetzt zur Erklärung. Das Modell, jetzt kommt ein zweites KI-Modell dazu, das versucht zu erklären, wie sicher wir sein können, dass das OK ist und wie sich das erste Modell entschieden hat, diesen Rahmen zu zeigen.
+
+Die Erklärung hier ist: Das Objekterkennungsmodell hat die Bounding Box auf dem Auto korrekt vorgeschlagen. Das Auto ist in der Mitte und es hat Straßenlichter hinter dem Auto.
+
+Anka Riesen: Das ist seine Erklärung, also darum findet er es, weil es Straßenlichter hat und weil es in der Mitte ist.
+
+Linda Riesen: Genau.
+
+Anka Riesen: Stimmt ja beides nicht.
+
+Linda Riesen: Stimmt beides nicht genau. OK, dann gehen wir zur Saliency Map. Diese wird so generiert, dass jedes Mal, wenn das Modell das Bild nochmal analysiert, einen Pixel verändert, und je nachdem wie unterschiedlich der Output ist, wird das Ganze rot eingezeichnet. Wenn der Output gleich bleibt, dann ist es blau. Desto roter, desto mehr beeinflusst dieser Pixel den Output.
+
+Anka Riesen: Und wer berechnet den Pixel?
+
+Linda Riesen: Das Erklärungsmodell, das ist jetzt das dritte Modell, das im Ablauf reinbezogen wird.
+
+Hier sieht man, das Modell hat sich ziemlich rund um das Auto konzentriert.
+
+Anka Riesen: Konzentriert, oder?
+
+Linda Riesen: Ja, konzentriert. Hast du jetzt das Gefühl, dieses Bild würde dir helfen, zu vertrauen, dass das Modell das Richtige macht oder würde dir helfen zu verstehen, wenn es das Falsche macht, oder würde dir das gar nicht helfen?
+
+Anka Riesen: Eigentlich würde es mir helfen zu verstehen, dass es richtig ist.
+
+Linda Riesen: OK, also ist dein Vertrauen jetzt größer als zuvor, dass das Modell das Richtige macht?
+
+Anka Riesen: Grösser, Wobei das Auto ja eigentlich parkiert ist und daher gar nicht so gefährlich für mich in diesem Moment.
+
+Linda Riesen: Gut, aber reinfahren, also du könntest trotzdem in das Auto reinfahren.
+
+Anka Riesen: Nein, ja genau, für mich wird es besser durch dieses Bild.
+
+Linda Riesen: OK. Dann gibt es noch eine Erklärung von der Map, also vom Output nochmal eine Erklärung.
+
+Genau, der Red Call of the Positive Contribution zeigt an, dass das Modell das Objekt mit hoher Confidence erkannt hat. Er fokussierte sich auf das Zentrum, das Auto ist nicht hinter einem anderen Auto, gerade Straße.
+
+Hat diese Erklärung dir geholfen, die Prediction zu verstehen?
+
+Anka Riesen: Ich finde, es ist einfach eine Beschreibung des Bildes. Nein, hat mir nicht so viel geholfen.
+
+Linda Riesen: OK, würde dir die zweite Erklärung mehr Vertrauen geben als die erste?
+
+Anka Riesen: Ja, die zweite Erklärung würde mir mehr Vertrauen für das erste Bild geben als die erste Erklärung.
+
+Linda Riesen: Super. Dann habe ich das Modell mehrmals laufen lassen. Hier sieht man ein Beispiel: Das Modell versucht etwas einzukreisen, hat aber den Fußgänger nicht gefunden. Wenn man die Saliency Map anschaut, sieht man, dass sich das Modell auf die Füsse konzentriert, sonst nichts. Die Explanation war OK.
+
+Anka Riesen: Ja, ich finde, er erklärt es, warum er es nicht gefunden hat, und ich kann nachvollziehen, dass er es nicht gefunden hat.
+
+Linda Riesen: Kommen wir zum nächsten. Hier sehen wir ein Bild eines Autos, Bounding Box zu groß. Die Saliency Map zeigt, dass der Rand des Autos relevant ist.
+
+Anka Riesen: Ja.
+
+Linda Riesen: Genau, dann nachher die Erklärung von Llama.
+
+Anka Riesen: Nur da hat er gar nichts.
+
+Linda Riesen: Ja, genau, ich finde, es passt irgendwie überein, nicht so gut, aber OK.
+
+Anka Riesen: Und Llama ist auch eine AI?
+
+Linda Riesen: Genau, wir haben hier ein AI-Modell, das versucht zu erklären, wie jeder Pixel zur Prediction beigetragen hat.
+
+Anka Riesen: Zu erklären.
+
+Linda Riesen: Genau.
+
+Dann das dritte Beispiel, das ziemlich schlecht lief: Das Auto wird erkannt, Saliency Map zeigt überall, nicht hilfreich, Llama ebenfalls nicht hilfreich.
+
+Anka Riesen: Hm.
+
+Linda Riesen: Das erste Beispiel war richtig gut, aber die Zweifel sahen OK aus.
+
+Anka Riesen: Mhm.
+
+Linda Riesen: Super. Wenn du jetzt nochmal über dieses Modell nachdenkst: Wie ist das jetzt mit deinem Verständnis? Hast du das Gefühl, du verstehst jetzt besser, wie das Modell zu einer Antwort kommt?
+
+Anka Riesen: Ja.
+
+Linda Riesen: Und würdest du jetzt einem Auto, das mit so einem Modell herumfährt, mehr oder weniger vertrauen?
+
+Anka Riesen: Weniger.
+
+Linda Riesen: Weniger. Wie steht es generell jetzt mit deiner Einstellung zu AI? Mehr, weniger Vertrauen oder gleich?
+
+Anka Riesen: Weniger, wobei ich finde, es ist einfach ein Modell von der AI. Es gibt gute Anwendungen und nicht so gute.
