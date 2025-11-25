@@ -166,6 +166,7 @@ cython_debug/
 src/output/*
 src/masks/*
 src/unsloth_compiled_cache/*
+unsloth_compiled_cache/*
 src/coco_data/*
 src/kitti_data/*
 
