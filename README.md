@@ -76,7 +76,7 @@ python src/driseYoloLlama.py
 
 ---
 
-## 📦 Example Meta Output (JSON)
+## Example Meta Output (JSON)
 
 ```json
 {
