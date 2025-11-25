@@ -1,1 +1,1 @@
-to keep folder structure for git
+# Folder used to store output
