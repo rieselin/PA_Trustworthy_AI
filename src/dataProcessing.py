@@ -12,7 +12,7 @@ class DataProcessing:
     def resize_image(self):
         height, width = self.args.input_size
         img_path = self.args.datadir + self.args.img_name
-        if self.args.datadir.startswith('kitti'):
+        if 'kitti' in self.args.datadir:
             orig_img = Image.open(img_path + '.png')
         else: 
             orig_img = Image.open(img_path + '.jpg')

@@ -163,13 +163,13 @@ cython_debug/
 #.idea/
 
 
-output/*
-masks/*
-unsloth_compiled_cache/*
-coco_data/*
-kitti_data/*
+src/output/*
+src/masks/*
+src/unsloth_compiled_cache/*
+src/coco_data/*
+src/kitti_data/*
 
-!coco_data/README.md
-!output/README.md
-!masks/README.md
-!kitti_data/README.md
+!src/coco_data/README.md
+!src/output/README.md
+!src/masks/README.md
+!src/kitti_data/README.md

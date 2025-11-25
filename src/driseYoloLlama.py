@@ -24,15 +24,15 @@ class Args:
         self.__dict__.update(entries)
         
 args = Args(**{
-    'img_names':['000010', '000011', '000012','000013', '000014', '000015', '000016', '000017', '000018', '000019'],#  ['00901'],# , #[ '000001'],#['000000000419', '000000000260', '000000000328', '000000000149', '000000000722', '000000000730'],
-    'model_path': 'train13/weights/best.pt', #yolov8n.pt',#'use_case/models/best.pt',#
-    'datadir': 'kitti_data/kitti/train/data/',#'use_case/',#,#,#'kitti_data/kitti/train/data/', #'coco_data/coco-2017/train/data/',
-    'annotations_dir': 'kitti_data/kitti/train/annotations/',#'use_case/',#'kitti_data/kitti/train/annotations/',#'use_case/',#'kitti_data/kitti/train/annotations/', #'coco_data/coco-2017/train/data/',
+    'img_names':['000010', '000011', '000012','000013', '000014', '000015', '000016', '000017', '000018', '000019'], # names of images to process without file extension
+    'model_path': 'src/train13/weights/best.pt', # path to yolo model weights
+    'datadir': 'src/kitti_data/kitti/train/data/', # or for coco: 'src/coco_data/coco-2017/train/data/',
+    'annotations_dir': 'src/kitti_data/kitti/train/annotations/', # or for coco: 'src/coco_data/coco-2017/train/data/',
     'device': 'cuda:0',
     'input_size': (480, 800),
     'gpu_batch': 16,
     'mask_type': 'mfpp', # mfpp or rise
-    'maskdir': 'masks/',
+    'maskdir': 'src/masks/',
     'N': 1000,
     'resolution': 8,
     'p1': 0.5,
@@ -50,8 +50,7 @@ args = Args(**{
     'send_labelled_bbox': False,
     'send_predicted_bbox': True, 
     'send_all_bboxes_of_image_at_once': False,
-    'remove_all_borders_and_legends_from_images': True,
-    'send_weird_test': False
+    'remove_all_borders_and_legends_from_images': True
 })
 
 
@@ -60,7 +59,7 @@ kittiDataSet = KittiDataSet(
     split="train", 
    # classes=["Car", "Pedestrian"], 
     max_samples=20, 
-    dataset_dir='kitti_data/')
+    dataset_dir='src/kitti_data/')
 kittiDataSet.prepare_annotations()
 
 
@@ -69,7 +68,7 @@ cocoDataSet = CocoDataSet(
     split="train", 
     classes=["person", "car"], 
     max_samples=10, 
-    dataset_dir='coco_data/')
+    dataset_dir='src/coco_data/')
 
 cocoDataSet.prepare_annotations()
 
@@ -83,7 +82,7 @@ if args.run_id_tag != '':
 for args.img_name in args.img_names:
 
     # setup
-    output_path = f'output/{date_time_tag}/{args.img_name}/'
+    output_path = f'src/output/{date_time_tag}/{args.img_name}/'
     os.makedirs(output_path, exist_ok=True)
 
 
@@ -163,35 +162,7 @@ for args.img_name in args.img_names:
                 saliency = driseExplainer.apply_saliency(tensor, bbox)
                 # plot salicney map with both target bbox and predicted bbox
 
-                if args.send_weird_test:
-                    # image with labelled bbox
-                    composed = plot_image_with_bboxes(img_np, [bbox], show_plot=args.show_plots, save_to=f'{output_path_saliency}bbox_{i}_tc_{target_class}.png', tight_save=args.remove_all_borders_and_legends_from_images)
-                    composed1 = Image.open( f'{output_path_saliency}bbox_{i}_tc_{target_class}.png')
-                    # image with predicted bbox and saliency map
-                    driseExplainer.plot_saliency(saliency, None, best_pred_bbox, img_np, f'{output_path_saliency}drise_saliency_{i}_tc_{target_class}.png', target_class)
-                    composed2 = Image.open( f'{output_path_saliency}drise_saliency_{i}_tc_{target_class}.png') 
-
-                    images = [composed1, composed2]
-
-                    widths, heights = zip(*(i.size for i in images))
-
-                    total_width = sum(widths)
-                    max_height = max(heights)
-
-                    composed = Image.new('RGB', (total_width, max_height))
-
-                    x_offset = 0
-                    for im in images:
-                        composed.paste(im, (x_offset,0))
-                        x_offset += im.size[0]
-
-                    composed.save(f'{output_path}composed_image_{i}_tc_{target_class}.jpg')
-                    composed.filename = f'{output_path}composed_image.jpg'
-
-                    args.instruction = args.instruction + f'The image shows on the left the labelled bounding box and on the right the predicted bounding box with the saliency map overlayed.'
-
-
-                elif not args.send_saliency_map and not args.send_labelled_bbox and not args.send_predicted_bbox:
+                if not args.send_saliency_map and not args.send_labelled_bbox and not args.send_predicted_bbox:
                     composed = resized_img
                 elif not args.send_saliency_map and args.send_labelled_bbox and not args.send_predicted_bbox:
                     composed = plot_image_with_bboxes(img_np, [bbox], show_plot=args.show_plots, save_to=f'{output_path_saliency}bbox_{i}_tc_{target_class}.png', tight_save=args.remove_all_borders_and_legends_from_images)
