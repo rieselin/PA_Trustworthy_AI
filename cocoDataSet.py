@@ -1,26 +1,14 @@
 import fiftyone as fo
-
-
 import json
 import os
 
-# name = "my-dataset"
-# dataset_dir = "/path/to/detection-dataset"
+from dataSet import DataSet
 
-# Create the dataset
-# dataset = fo.Dataset.from_dir(
-#     dataset_dir=dataset_dir,
-#     dataset_type=fo.types.COCODetectionDataset, # Change with your type
-#     name=name,
-# )
 
-class CocoDataSet:
+class CocoDataSet(DataSet):
     def __init__(self, dataset_name="coco-2017", split="train", classes=None, max_samples=None, dataset_dir=None):
-        self.dataset_name = dataset_name
-        self.split = split
+        super().__init__(dataset_name=dataset_name, split=split, max_samples=max_samples, dataset_dir=dataset_dir)
         self.classes = classes
-        self.max_samples = max_samples
-        self.dataset_dir = dataset_dir
         self.dataset = self.load_dataset()
         
     def load_dataset(self):
@@ -33,7 +21,7 @@ class CocoDataSet:
             max_samples=self.max_samples
         )
         return dataset
-    def save_bboxes_to_file(self , overwrite=False):
+    def prepare_annotations(self , overwrite=False):
         # save bboxes in class_id x_min y_min x_max y_max format (as text file imagename.txt)
         output_dir = self.dataset_dir +"/"+ self.dataset_name + "/" + self.split + "/"
         labels_path = output_dir + "labels.json"

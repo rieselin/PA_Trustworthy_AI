@@ -3,7 +3,7 @@ import os
 from utils.plot_utils import plot_saliency_and_targetbb_on_image
 from xai.drise_batch import DRISEBatch
 
-class DRISEExplainer:
+class DriseDmfppExplainer:
     def __init__(self, args, yoloModel, generate_new=True):
         self.args = args
         self.generate_new = generate_new

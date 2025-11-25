@@ -5,9 +5,9 @@ import json
 
 from cocoDataSet import CocoDataSet
 from dataProcessing import DataProcessing
-from driseExplainer import DRISEExplainer
+from driseExplainer import DriseDmfppExplainer
 from kittiDataSet import KittiDataSet
-from llamaVisionModel import LLMAVisionModel
+from llamaVisionModel import LlamaVisionModel
 from metrics.utils import calculate_iou
 from utils.plot_utils import plot_image_with_bboxes
 from yoloModel import YoloModel
@@ -24,7 +24,7 @@ class Args:
         self.__dict__.update(entries)
         
 args = Args(**{
-    'img_names':['000000', '000001', '000002','000003', '000004', '000005', '000006', '000007', '000008', '000009'],#  ['00901'],# , #[ '000001'],#['000000000419', '000000000260', '000000000328', '000000000149', '000000000722', '000000000730'],
+    'img_names':['000010', '000011', '000012','000013', '000014', '000015', '000016', '000017', '000018', '000019'],#  ['00901'],# , #[ '000001'],#['000000000419', '000000000260', '000000000328', '000000000149', '000000000722', '000000000730'],
     'model_path': 'train13/weights/best.pt', #yolov8n.pt',#'use_case/models/best.pt',#
     'datadir': 'kitti_data/kitti/train/data/',#'use_case/',#,#,#'kitti_data/kitti/train/data/', #'coco_data/coco-2017/train/data/',
     'annotations_dir': 'kitti_data/kitti/train/annotations/',#'use_case/',#'kitti_data/kitti/train/annotations/',#'use_case/',#'kitti_data/kitti/train/annotations/', #'coco_data/coco-2017/train/data/',
@@ -36,7 +36,7 @@ args = Args(**{
     'N': 1000,
     'resolution': 8,
     'p1': 0.5,
-    'target_classes': [1,2,3,0],
+    'target_classes': [1,2,3,4,0],
     'show_plots': False,
     'run_id_tag': '',
     'instruction': '''describe why the object detection model made the bounding box prediciton based on the saliency map and the predicted bounding box on the image. 
@@ -46,7 +46,7 @@ args = Args(**{
     keep the answer concise within 100 words.''',
     'run_only_first_bbox': False,
 # send to llama configs
-    'send_saliency_map': True,
+    'send_saliency_map': False,
     'send_labelled_bbox': False,
     'send_predicted_bbox': True, 
     'send_all_bboxes_of_image_at_once': False,
@@ -59,9 +59,9 @@ kittiDataSet = KittiDataSet(
     dataset_name="kitti", 
     split="train", 
    # classes=["Car", "Pedestrian"], 
-    max_samples=10, 
+    max_samples=20, 
     dataset_dir='kitti_data/')
-kittiDataSet.save_bboxes_to_file()
+kittiDataSet.prepare_annotations()
 
 
 cocoDataSet = CocoDataSet(
@@ -71,7 +71,7 @@ cocoDataSet = CocoDataSet(
     max_samples=10, 
     dataset_dir='coco_data/')
 
-cocoDataSet.save_bboxes_to_file()
+cocoDataSet.prepare_annotations()
 
 # overwrite args.input_size based on dataset images
 
@@ -90,11 +90,12 @@ for args.img_name in args.img_names:
 
     # ## Data Processing
     dataProcessing = DataProcessing(args, output_path)
-    resized_img, img_np = dataProcessing.import_data()
+    resized_img, img_np = dataProcessing.resize_image()
     tensor = dataProcessing.preprocess_image(img_np)
-    labels = dataProcessing.load_labels()
+    labels = dataProcessing.load_labels_for_image()
 
     composedImagePaths = []
+    predicted_bboxes_with_conf_and_labels = []
     
 
     for target_class in args.target_classes:
@@ -108,14 +109,15 @@ for args.img_name in args.img_names:
         # ## YOLO
         yoloModel = YoloModel(args)
         results = yoloModel.predict(img_np)
-        predicted_bboxes = yoloModel.extract_bboxes(results)
+        predicted_bboxes_with_conf_and_labels = yoloModel.extract_bboxes(results)
+        predicted_bboxes = [item['bbox'] for item in predicted_bboxes_with_conf_and_labels]
         if len(predicted_bboxes) == 0:
             print(f"No predicted bounding boxes found by YOLO in image {args.img_name}.")
         image_with_bboxes = yoloModel.plot_bboxes(img_np, predicted_bboxes, output_path)
 
 
         # ## D-RISE
-        driseExplainer = DRISEExplainer(args, yoloModel, generate_new=True)
+        driseExplainer = DriseDmfppExplainer(args, yoloModel, generate_new=True)
         mask_path = driseExplainer.generate_masks()
 
         output_path_saliency = f'{output_path}saliency/'
@@ -125,7 +127,7 @@ for args.img_name in args.img_names:
         os.makedirs(output_path_llama, exist_ok=True)
 
 
-        llamaVisionModel = LLMAVisionModel(args)
+        llamaVisionModel = LlamaVisionModel(args)
         model, tokenizer = llamaVisionModel.load_model()
 
         
@@ -258,6 +260,7 @@ for args.img_name in args.img_names:
             "send_labelled_bbox": args.send_labelled_bbox,
             "send_predicted_bbox": args.send_predicted_bbox
         },
+        "predicted_bboxes": predicted_bboxes_with_conf_and_labels,
         "output_paths": {
             "output_root": output_path,
             "saliency_dir": output_path_saliency,

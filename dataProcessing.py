@@ -9,7 +9,7 @@ class DataProcessing:
     def __init__(self, args, output_path):
         self.args = args
         self.output_path = output_path
-    def import_data(self):
+    def resize_image(self):
         height, width = self.args.input_size
         img_path = self.args.datadir + self.args.img_name
         if self.args.datadir.startswith('kitti'):
@@ -32,7 +32,7 @@ class DataProcessing:
         tensor = preprocess(img_np)
         tensor = tensor.unsqueeze(0).to(self.args.device) # 1,3,224,224
         return tensor
-    def load_labels(self):
+    def load_labels_for_image(self):
         labels = self.args.annotations_dir + self.args.img_name + '.txt'
         return labels
     def plot_bboxes(self, img_np, labels, target_class):

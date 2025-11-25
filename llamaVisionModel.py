@@ -3,7 +3,7 @@ from PIL import Image
 from unsloth import FastVisionModel # FastLanguageModel for LLMs
 from transformers import TextStreamer
 
-class LLMAVisionModel:
+class LlamaVisionModel:
     def __init__(self, args):
         self.args = args
     def load_model(self):
@@ -15,29 +15,6 @@ class LLMAVisionModel:
         )
         FastVisionModel.for_inference(model) # Enable for inference!
         return model, tokenizer
-    def createImageInput(self, output_path, resized_img, target_class):
-        #yolo detected bboxes
-        yoloPredictedBboxes = Image.open(f'{output_path}yolo_predicted_bboxes.png')
-
-        # saliency map with target bbox
-        driseSaliency = Image.open(f'{output_path}drise_saliency.png')
-
-
-        images = [resized_img, yoloPredictedBboxes, driseSaliency]
-        widths, heights = zip(*(i.size for i in images))
-
-        total_width = sum(widths)
-        max_height = max(heights)
-
-        composed = Image.new('RGB', (total_width, max_height))
-
-        x_offset = 0
-        for im in images:
-            composed.paste(im, (x_offset,0))
-            x_offset += im.size[0]
-
-        composed.save(f'{output_path}composed_image.jpg')
-        return composed
     def compose_input(self, tokenizer, composed):
         messages = [
         {"role": "user", "content": [
