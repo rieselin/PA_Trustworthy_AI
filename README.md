@@ -155,6 +155,8 @@ You can easily customize or expand:
 
 * Swap YOLO model variants (simply change `--model_path`)
 * Use a different mask type (`--mask_type`)
+* Change Llama instruction (`--instruction`)
+* Change what image is sent to llama (`--send_saliency_map`, `--send_labelled_bbox`, `--send_predicted_bbox`, `--send_all_bboxes_of_image_at_once`) 
 
 ---
 
